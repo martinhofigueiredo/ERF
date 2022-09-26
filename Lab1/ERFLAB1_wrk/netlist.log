@@ -1,0 +1,23 @@
+; Top Design: "ERFLAB1_lib:microstrip:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ERFLAB1_lib:microstrip:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+model MellowSub MSUB H=0.762 mm Er=3.2  Mur=1  Cond=1.0E+50  Hu=3.93701e+34 meter T=0 mil TanD=0.003  Rough=0 cm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MLIN2:TL1  N__2 N__3 Subst="MellowSub"  W=0.478642 mm L=5 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+R:R1  N__2 0 R=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=1.0 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:Term1  N__3 0 Num=1 Z=50 Ohm Noise=yes 
+aele Zin1=zin(S11,PortZ1);

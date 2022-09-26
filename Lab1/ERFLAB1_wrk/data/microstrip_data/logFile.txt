@@ -1,0 +1,20 @@
+
+hpeesofsim (*) 532.update2.0 Mar  6 2021, MINT version 5
+    (64-bit windows built: Sat Mar 06, 2021 18:08:32 +0000)
+
+
+***** Simulation started at Wed Sep 21 09:37:26 2022
+      Running on host: "FEUP-I221D11"
+      In Directory: "C:\Users\up201506179\Desktop\ERF\ERFLAB1_wrk\data"
+      Process ID: 6620
+
+Warning detected by hpeesofsim in Substrate model during netlist flattening.
+    Simulations referencing substrate `MellowSub' will not include metal loss
+    because metal thickness is zero.
+
+SP SP1[1] <ERFLAB1_lib:microstrip:schematic>   freq=(1 GHz->10 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =    10.42 seconds.
+
