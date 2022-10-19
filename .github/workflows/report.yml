@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      
     - uses: docker://pandoc/latex:2.9
-    - uses: runsascoded/nbconvert@v1.2
-    - name: Install dependencies
+    - name: Install Nbconvert
+      run: pip install nbconvert
+    - name: Make pdf
       run:  cd Lab2 && make
       
     - name: Upload a Build Artifact
