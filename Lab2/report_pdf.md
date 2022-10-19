@@ -11,15 +11,15 @@ lang: pt
 # ERF Relatorio 19 Out
 
 ## Abstrato
-Este trabalho tem como objetivo praticar  _impedance matching_ entre a carga e a linha de transmissão. A principal vantagem de realizar este processo é que garante uma redução de reflexões em ambos os portos na frequência de operação 
+Este trabalho tem como objetivo estudar a utilização _impedance matching_ numa linha de transmissão. A principal vantagem de realizar este processo é que garante uma redução de reflexões em ambos os portos na frequência de operação 
 $$R_L = R_S$$
 $$P_{max}=\frac{V^2}{R_S}\frac{R_L/R_S}{(1+R_L/R_S)^2)}$$
-Ambos stubs em aberto e em curto podem ser usados para esta análise, neste caso iremos usar stubs em aberto. Numa primeira fase iremos posicionar apenas um stub, uma abordagem mais rápida, mas menos versátil. E para uma maior versatilidade, numa segunda fase, posicionar dois stubs.
+Ambos stubs em aberto e em curto podem ser usados para esta análise, sabendo que stubs abertos podem comportar-se como antenas para frequencias elevadas, iremos usar stubs em aberto. Numa primeira fase iremos configurar apenas um stub, uma abordagem mais rápida, mas menos versátil. Para um maior controlo e precisão, numa segunda fase, iremos configurar a linha de transmissão com dois stubs.
 
 
 ## 1 a) Single Open Stub
 Os stubs podem ser usados para combinar a impedância de carga com a impedância da fonte. O stub é posicionado a uma certa distancia da carga para que a parte resistiva da impedância da carga seja igual à parte resistiva da impedãncia da fonte. O comprimento do stub é escolhido de forma a que a parte reativa entre as duas seja, também, cancelada. Um stub é usado para uma combinação perfeita numa única frequência.
-Para tal posiciona-mos duas _microstrip lines_ ligadas entre a carga e a fonte e outra entre a fonte e o circuito em aberto, para simular o _open Stub_. Postreriormente dimensionamos ambas as _microstrip lines_ com auxlio da ferramenta de _Smith Chart_ para obter a impedância da linha e do stub que correspodem a zero distorção e zero perdas das linhas. Normalizando os valores da impedância, obtivemos duas soluções: A primeira com o caminho mais longo de stub e a segunda com o mais curto.
+Para tal conectamos duas _microstrip lines_ ligadas entre a carga e a fonte e outra ligada apenas à fonte e com o outro terminal desconnectado , para simular o _open Stub_. Posteriormente dimensionamos ambas as _microstrip lines_ com auxilio da ferramenta de _Smith Chart_ para obter a impedância da linha e do stub que correspodem a zero reflexões e zero perdas das linhas. Normalizando os valores da impedância, obtivemos duas soluções: A primeira com o caminho mais longo de stub e a segunda com o mais curto.
 
 __Stub Longo__:
 
@@ -36,7 +36,7 @@ Para estas análises, com os valores que obtivemos em cima subtituímos na ferra
 ![Esquema com Stub mais longo](Fotos/1.esquema.png){ width=45% } 
 ![Esquema com Stub mais longo](Fotos/1.2.esquema.png){ width=45% }
 
-Após isto analisamos os gráficos para concluir a solução mais ótima. Concluimos que os coeficientes de reflexão de ambas as soluções são idênticos, obtendo aquilo que era esperado. Nas frequências de que não a de operação o coeficiente de reflexão situa-se perto de zero e na frequência de operação (2,4GHz) um pico negativo. A diferenção mais obervervável é na impedancia de entrada, que se encontra invertida nas duas imagens
+Após isto, analisamos os gráficos para identificar a solução ótima. Concluimos que os coeficientes de reflexão de ambas as soluções são idênticos, obtendo aquilo que era esperado. Nas frequências de que não a de operação o coeficiente de reflexão situa-se perto de zero e na frequência de operação (2,4GHz) um pico negativo. A diferença mais observável é na impedância de entrada, que se encontra invertida nas duas imagens.
 
 ![Grafico Stub Longo](Fotos/1.grafico.png){ width=45% } 
 ![Grafico Stub Longo](Fotos/1.2.grafico.png){ width=45% }
