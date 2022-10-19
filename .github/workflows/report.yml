@@ -15,9 +15,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: docker://pandoc/latex:2.9
     - name: Install Nbconvert
-      run: pip install nbconvert
-    - name: Make pdf
-      run:  cd Lab2 && make
+      run: pip install nbconvert && cd Lab2 && make
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
