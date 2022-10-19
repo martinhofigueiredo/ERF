@@ -1,0 +1,30 @@
+name: Report PDF
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: configure
+      run: ./configure
+      
+    - name: Install dependencies
+      run:  cd LAB2 && make
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        # Artifact name
+        name: report.pdf
+        # A file, directory or wildcard pattern that describes what to upload
+        path: Lab2/report/report.pdf
+      # The desired behavior if no files are found using the provided path.
