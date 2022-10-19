@@ -51,6 +51,6 @@ Efetuamos a Simulação Electromagnética do esquema de 1.a). No primeiros gráf
 
 ![Coeficiente de reflexção Simulado](Fotos/em3.png){ width=30% } ![Layout filtro](Fotos/Em1.png){ width=30% } ![Simulção de Campo Eléctrico](Fotos/em2.png){ width=30% }
 
-# Conlusions
+# Conclusão
 
 Em suma, numa primeira fase usar apenas um _stub_ para equilibrar a linha é uma abordagem mais rápida para obter a solução desejada. Para uma maior versatilidade com o mesmo objetivo podemos usar dois _stubs_ em aberto, deste modo não temos de alterar a distância e o comprimento do stub, apenas temos de variar o comprimento dos stubs, caso mude a impedância de carga, mantência a distância relativa entre os mesmos. Um _stub_ só vai atingir uma perfeita combinação numa só frequência, usando vários _stubs_ já conseguimos obter uma combinação perfeita numa maior gama de frequências. A simulação electromagnética baseada no Método dos Momentos é mais trabalhosa e demorada mas permite obter uma simulação mais precisa.
