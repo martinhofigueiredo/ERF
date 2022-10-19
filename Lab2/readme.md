@@ -1,10 +1,10 @@
 # ERF Relatorio 19 Out
 
 ## Abstrato
-Este trabalho tem como objetivo estudar a utilização _impedance matching_ numa linha de transmissão. A principal vantagem de realizar este processo é que garante uma redução de reflexões em ambos os portos na frequência de operação 
+Este trabalho tem como objetivo estudar a utilização de _impedance matching_ numa linha de transmissão. A principal vantagem de realizar este processo é que garante uma redução de reflexões em ambos os portos da linha, na frequência de operação. 
 $$R_L = R_S$$
 $$P_{max}=\frac{V^2}{R_S}\frac{R_L/R_S}{(1+R_L/R_S)^2)}$$
-Ambos stubs em aberto e em curto podem ser usados para esta análise, sabendo que stubs abertos podem comportar-se como antenas para frequencias elevadas, iremos usar stubs em aberto. Numa primeira fase iremos configurar apenas um stub, uma abordagem mais rápida, mas menos versátil. Para um maior controlo e precisão, numa segunda fase, iremos configurar a linha de transmissão com dois stubs.
+Ambos os stubs, em aberto e em curto, podem ser usados para esta análise. Sabendo que stubs abertos podem comportar-se como antenas para frequências muito elevadas, iremos usar stubs em aberto. Numa primeira fase, iremos apenas configurar um stub, uma abordagem mais rápida mas menos versátil. Para um maior controlo e precisão, numa segunda fase, vamos configurar a linha de transmissão com dois stubs.
 
 
 ## 1 a) Single Open Stub
