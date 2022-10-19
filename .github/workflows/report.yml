@@ -17,6 +17,7 @@ jobs:
     - name: configure
       run: ./configure
       
+    - uses: docker://pandoc/latex:2.9
     - name: Install dependencies
       run:  cd LAB2 && make
       
