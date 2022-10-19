@@ -8,9 +8,6 @@ float-placement-figure: H
 ...
 
 # ERF Relatorio 19 Out
->Martinho Figueiredo (up201506179)
->
->José Pedro Cruz (up201504646)
 
 ## Abstrato
 Este trabalho tem como objetivo praticar o equilibrio de impedâncias entre a carga e a linha de forma da não existiram distorções no sinal. O principal objetivo é conectar uma impedância de valor complexo (_150 - j100_)arbitrário a uma fonte com uma impedância da fonte de carga (_50 _) sem que haja reflexão da entrada e para garantir potência máxima de transferência entre a fonte e a carga. 
@@ -31,26 +28,26 @@ __Stub Curto__:
 
 ![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% }   ![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
 
-Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemáticos finais.
+Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemas finais.
 
-![Esquemático com Stub mais longo](Fotos/1.esquematico.png){ width=45% } ![Esquemático com Stub mais longo](Fotos/1.2.esquematico.png){ width=45% }
+![Esquema com Stub mais longo](Fotos/1.esquema.png){ width=45% } ![Esquema com Stub mais longo](Fotos/1.2.esquema.png){ width=45% }
 
 Após isto analisamos os gráficos para concluir a solução mais ótima. Concluimos que os coeficientes de reflexão de ambas as soluções são idênticos, obtendo aquilo que era esperado. Nas frequências de que não a de operação o coeficiente de reflexão situa-se perto de zero e na frequência de operação (2,4GHz) um pico negativo. A diferenção mais obervervável é na impedancia de entrada, que se encontra invertida nas duas imagens
 
 ![Grafico Stub Longo](Fotos/1.grafico.png){ width=45% } ![Grafico Stub Longo](Fotos/1.2.grafico.png){ width=45% }
 
 ## b)  Douple Open Stubs
-Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso esquemático. Em modos gerais usar dois stubs é um técnica mais comum, isto porque, usando apenas um stub se a carga mudar a posição e comprimento do stub tem de mudar também. Usando dois stubs é possível fixar a posição dos stubs em relação um ao outro e apenas mudar o comprimento dos stubs para dar _match_ a uma variação da carga.
+Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso esquema. Em modos gerais usar dois stubs é um técnica mais comum, isto porque, usando apenas um stub se a carga mudar a posição e comprimento do stub tem de mudar também. Usando dois stubs é possível fixar a posição dos stubs em relação um ao outro e apenas mudar o comprimento dos stubs para dar _match_ a uma variação da carga.
 
 ![Análise Smith](Fotos/1.b.smith.png){ width=45% } ![Análise Smith 2](Fotos/1.b.2.smith.png){ width=45% }
 
-![Esquema](Fotos/1.b.esquematico.png){ width=45% } ![Esquema 2](Fotos/1.b.2.esquematico.png){ width=45% }
+![Esquema](Fotos/1.b.esquema.png){ width=45% } ![Esquema 2](Fotos/1.b.2.esquema.png){ width=45% }
 
 ![Gráfico](Fotos/1.b.grafico.png){ width=45% } ![Gráfico](Fotos/1.b.2.grafico.png){ width=45% }
 
 ## 2. Optional assignment
 
-Efetuamos a Simulação Electromagnética do esquemático de 1.a). No primeiros gráfico conseguimos observar os resultados da simulação electromagnética de todos os _S parameters_ Comparando os resultados da análise electromagnética baseado no Método dos Momentos com a análise inicial, podemos verificar uma deslocação da frequência aonde a reflexão é nula. A análise electromagnética baseada no metódo dos momentos é esperado que nos dê um simulação mais precisa que a simulação inicial, que numa primeira fase, a simulação esquemática é mais rápida.
+Efetuamos a Simulação Electromagnética do esquema de 1.a). No primeiros gráfico conseguimos observar os resultados da simulação electromagnética de todos os _S parameters_ Comparando os resultados da análise electromagnética baseado no Método dos Momentos com a análise inicial, podemos verificar uma deslocação da frequência aonde a reflexão é nula. A análise electromagnética baseada no metódo dos momentos é esperado que nos dê um simulação mais precisa que a simulação inicial, que numa primeira fase, a simulação esquemática é mais rápida.
 
 ![Análise Smith](Fotos/2.EM.Sim.png){ width=45% } ![Análise Smith 2](Fotos/2.EM.result.png){ width=45% }
 
