@@ -4,6 +4,6 @@ author: [José Pedro Cruz, Martinho Figueiredo]
 date: "19-10-22"
 keywords: [Markdown, Example]
 titlepage: true
-float-placement-figure: h
+float-placement-figure: H
 ...
 
