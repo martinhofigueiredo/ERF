@@ -5,12 +5,13 @@ date: "19-10-22"
 keywords: [Markdown, Example]
 titlepage: true
 float-placement-figure: H
+lang: pt
 ...
 
 # ERF Relatorio 19 Out
 
 ## Abstrato
-Este trabalho tem como objetivo praticar o equilibrio de impedâncias entre a carga e a linha de forma da não existiram distorções no sinal. O principal objetivo é conectar uma impedância de valor complexo (_150 - j100_)arbitrário a uma fonte com uma impedância da fonte de carga (_50 _) sem que haja reflexão da entrada e para garantir potência máxima de transferência entre a fonte e a carga. 
+Este trabalho tem como objetivo praticar  _impedance matching_ entre a carga e a linha de transmissão. A principal vantagem de realizar este processo, é que garante uma redução de reflexões em ambos os portos na frequencia de operação 
 $$R_L = R_S$$
 $$P_{max}=\frac{V^2}{R_S}\frac{R_L/R_S}{(1+R_L/R_S)^2)}$$
 Ambos stubs em aberto e em curto podem ser usados para esta análise, neste caso iremos usar stubs em aberto. Numa primeira fase iremos posicionar apenas um stub, uma abordagem mais rápida, mas menos versátil. E para uma maior versatilidade, numa segunda fase, posicionar dois stubs.
