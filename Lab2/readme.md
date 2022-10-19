@@ -19,9 +19,7 @@ __Stub Longo__:
 ![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } ![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
 __Stub Curto__:
 
-![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% }
-
-![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
+![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% } ![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
 
 Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemáticos finais.
 
