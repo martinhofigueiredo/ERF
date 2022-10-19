@@ -12,16 +12,10 @@ Os stubs podem ser usados para combinar a impedância de carga com a impedância
 Para tal conectamos duas _microstrip lines_ ligadas entre a carga e a fonte, bem como outra ligada apenas à fonte e com o outro terminal desconectado , para simular o _open Stub_. Posteriormente dimensionamos ambas as _microstrip lines_ com auxilio da ferramenta de _Smith Chart_ para obter a impedância da linha e do stub que correspodem a zero reflexões e zero perdas das linhas. Normalizando os valores da impedância, obtivemos duas soluções: A primeira com o caminho mais longo de stub e a segunda com o mais curto.
 
 __Stub Longo__:
-
-![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45%, al } 
-
-![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
+![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } ![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
 
 __Stub Curto__:
-
-![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% }
-
-![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
+![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% } ![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
 
 Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemas finais.
 
@@ -39,7 +33,7 @@ Após isto, analisamos os gráficos para identificar a solução ótima. Conclui
 Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso esquema. Em modos gerais usar dois stubs é um técnica mais comum, isto porque, usando apenas um stub se a carga mudar a posição e comprimento do stub tem de mudar também. Usando dois stubs é possível fixar a posição dos stubs em relação um ao outro e apenas mudar o comprimento dos stubs para dar _match_ a uma variação da carga.
 
 
-![Análise Smith](Fotos/1.b.smith.png){ width=45% }
+![Análise Smith](Fotos/1.b.smith.png){ width=45% } 
 
 ![Análise Smith 2](Fotos/1.b.2.smith.png){ width=45% }
 
