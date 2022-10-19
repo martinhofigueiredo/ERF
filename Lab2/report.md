@@ -14,16 +14,14 @@ Ambos stubs em aberto e em curto podem ser usados para esta análise, neste caso
 Os stubs podem ser usados para combinar a impedância de carga com a impedância da fonte. O stub é posicionado a uma certa distancia da carga para que a parte resistiva da impedância da carga seja igual à parte resistiva da impedãncia da fonte. O comprimento do stub é escolhido de forma a que a parte reativa entre as duas seja, também, cancelada. Um stub é usado para uma combinação perfeita numa única frequência.
 Para tal posiciona-mos duas _microstrip lines_ ligadas entre a carga e a fonte e outra entre a fonte e o circuito em aberto, para simular o _open Stub_. Postreriormente dimensionamos ambas as _microstrip lines_ com auxlio da ferramenta de _Smith Chart_ para obter a impedância da linha e do stub que correspodem a zero distorção e zero perdas das linhas. Normalizando os valores da impedância, obtivemos duas soluções: A primeira com o caminho mais longo de stub e a segunda com o mais curto.
 
-Stub Longo:
-![Análise Smtih Linha longo](Fotos/1.smith-linha.png)
+__Stub Longo__:
 
-![Análise Smtih Stub longo](Fotos/1.smith-stub.png)
+![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } ![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
+__Stub Curto__:
 
-Stub Curto:
+![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% }
 
-![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png)
-
-![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png)
+![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
 
 Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemáticos finais.
 

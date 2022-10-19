@@ -3,5 +3,7 @@ default:
 	make pdf
 markdown:
 	jupyter nbconvert --to markdown lab1.ipynb --output report.md
+	cat report/metadata.yml report.md > report_pdf.md
 pdf:
-	pandoc report.md -o report/report.pdf --from markdown --template eisvogel.tex --listings -s
+	cp ../template/eisvogel.tex /usr/share/pandoc/data/templates/eisvogel.latex
+	pandoc report_pdf.md -o report/report.pdf --from markdown --template eisvogel --listings -s

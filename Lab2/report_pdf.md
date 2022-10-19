@@ -1,10 +1,19 @@
+---
+title: "Relatórtio Laboratório 1 ERF"
+author: [José Pedro Cruz, Martinho Figueiredo]
+date: "19-10-22"
+keywords: [Markdown, Example]
+titlepage: true
+float-placement-figure: h
+...
+
 # ERF Relatorio 19 Out
 >Martinho Figueiredo (up201506179)
 >
 >José Pedro Cruz (up201504646)
 
 ## Abstrato
-Este trabalho tem como objetivo praticar o equilibrio de impedâncias entre a carga e a linha de forma da não existiram distorções no sinal. O principal objetivo é conectar uma impedância de valor complexo (_150 - j100 $\Omega$_)arbitrário a uma fonte com uma impedância da fonte de carga (_50 Ω_) sem que haja reflexão da entrada e para garantir potência máxima de transferência entre a fonte e a carga. 
+Este trabalho tem como objetivo praticar o equilibrio de impedâncias entre a carga e a linha de forma da não existiram distorções no sinal. O principal objetivo é conectar uma impedância de valor complexo (_150 - j100_)arbitrário a uma fonte com uma impedância da fonte de carga (_50 _) sem que haja reflexão da entrada e para garantir potência máxima de transferência entre a fonte e a carga. 
 $$R_L = R_S$$
 $$P_{max}=\frac{V^2}{R_S}\frac{R_L/R_S}{(1+R_L/R_S)^2)}$$
 Ambos stubs em aberto e em curto podem ser usados para esta análise, neste caso iremos usar stubs em aberto. Numa primeira fase iremos posicionar apenas um stub, uma abordagem mais rápida, mas menos versátil. E para uma maior versatilidade, numa segunda fase, posicionar dois stubs.
@@ -14,16 +23,14 @@ Ambos stubs em aberto e em curto podem ser usados para esta análise, neste caso
 Os stubs podem ser usados para combinar a impedância de carga com a impedância da fonte. O stub é posicionado a uma certa distancia da carga para que a parte resistiva da impedância da carga seja igual à parte resistiva da impedãncia da fonte. O comprimento do stub é escolhido de forma a que a parte reativa entre as duas seja, também, cancelada. Um stub é usado para uma combinação perfeita numa única frequência.
 Para tal posiciona-mos duas _microstrip lines_ ligadas entre a carga e a fonte e outra entre a fonte e o circuito em aberto, para simular o _open Stub_. Postreriormente dimensionamos ambas as _microstrip lines_ com auxlio da ferramenta de _Smith Chart_ para obter a impedância da linha e do stub que correspodem a zero distorção e zero perdas das linhas. Normalizando os valores da impedância, obtivemos duas soluções: A primeira com o caminho mais longo de stub e a segunda com o mais curto.
 
-Stub Longo:
-![Análise Smtih Linha longo](Fotos/1.smith-linha.png)
+__Stub Longo__:
 
-![Análise Smtih Stub longo](Fotos/1.smith-stub.png)
+![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } ![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
+__Stub Curto__:
 
-Stub Curto:
+![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% }
 
-![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png)
-
-![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png)
+![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
 
 Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemáticos finais.
 
