@@ -49,13 +49,7 @@ Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso es
 
 Efetuamos a Simulação Electromagnética do esquema de 1.a). No primeiros gráfico conseguimos observar os resultados da simulação electromagnética de todos os _S parameters_ Comparando os resultados da análise electromagnética baseado no Método dos Momentos com a análise inicial, podemos verificar uma deslocação da frequência aonde a reflexão é nula. A análise electromagnética baseada no metódo dos momentos é esperado que nos dê um simulação mais precisa que a simulação inicial, que numa primeira fase, a simulação esquemática é mais rápida.
 
-![Coeficiente de reflexção Simulado](Fotos/em3.png){ width=45% }
-
-![Layout filtro](Fotos/Em1.png){ width=45% }
-
-![Simulção de Campo Eléctrico](Fotos/em2.png){ width=45% }
-
-
+![Coeficiente de reflexção Simulado](Fotos/em3.png){ width=30% } ![Layout filtro](Fotos/Em1.png){ width=30% } ![Simulção de Campo Eléctrico](Fotos/em2.png){ width=30% }
 
 # Conlusions
 
