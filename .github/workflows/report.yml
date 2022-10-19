@@ -13,10 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Convert ipynb to md
+      run: pip install nbconvert && cd Lab2 && make markdown
     - uses: docker://pandoc/latex:2.9
-    - name: Install Nbconvert
-      run: pip install nbconvert && cd Lab2 && make
-      
+    - name: Convert md to PDF
+      run: cd Lab2 && make pdf  
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
