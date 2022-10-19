@@ -26,11 +26,13 @@ __Stub Curto__:
 Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemas finais.
 
 ![Esquema com Stub mais longo](Fotos/1.esquema.png){ width=45% } 
+
 ![Esquema com Stub mais longo](Fotos/1.2.esquema.png){ width=45% }
 
 Após isto, analisamos os gráficos para identificar a solução ótima. Concluimos que os coeficientes de reflexão de ambas as soluções são idênticos, obtendo aquilo que era esperado. Nas frequências de que não a de operação o coeficiente de reflexão situa-se perto de zero e na frequência de operação (2,4GHz) um pico negativo. A diferença mais observável é na impedância de entrada, que se encontra invertida nas duas imagens.
 
 ![Grafico Stub Longo](Fotos/1.grafico.png){ width=45% } 
+
 ![Grafico Stub Longo](Fotos/1.2.grafico.png){ width=45% }
 
 ## b)  Douple Open Stubs
@@ -38,10 +40,15 @@ Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso es
 
 
 ![Análise Smith](Fotos/1.b.smith.png){ width=45% }
+
 ![Análise Smith 2](Fotos/1.b.2.smith.png){ width=45% }
+
 ![Esquema](Fotos/1.b.esquema.png){ width=45% }
+
 ![Esquema 2](Fotos/1.b.2.esquema.png){ width=45% } 
+
 ![Gráfico](Fotos/1.b.grafico.png){ width=45% }
+
 ![Gráfico](Fotos/1.b.2.grafico.png){ width=45% } 
 
 ## 2. Optional assignment
@@ -49,7 +56,9 @@ Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso es
 Efetuamos a Simulação Electromagnética do esquema de 1.a). No primeiros gráfico conseguimos observar os resultados da simulação electromagnética de todos os _S parameters_ Comparando os resultados da análise electromagnética baseado no Método dos Momentos com a análise inicial, podemos verificar uma deslocação da frequência aonde a reflexão é nula. A análise electromagnética baseada no metódo dos momentos é esperado que nos dê um simulação mais precisa que a simulação inicial, que numa primeira fase, a simulação esquemática é mais rápida.
 
 ![Coeficiente de reflexção Simulado](Fotos/em3.png){ width=45% }
+
 ![Layout filtro](Fotos/Em1.png){ width=45% }
+
 ![Simulção de Campo Eléctrico](Fotos/em2.png){ width=45% }
 
 
