@@ -4,6 +4,6 @@ FROM gitpod/workspace-full
 RUN sudo apt-get update \
     && sudo apt-get install texlive-full -y\
     && sudo apt-get install pandoc -y\
-    && sudo pip install  nbconvert -y\
+    && sudo pip install  nbconvert \
 
 
