@@ -11,9 +11,12 @@ Ambos os stubs, em aberto e em curto, podem ser usados para esta análise. Saben
 Os stubs podem ser usados para combinar a impedância de carga com a impedância da fonte. O stub é posicionado a uma certa distância da carga, para que a parte resistiva da sua impedância seja igual à parte resistiva da impedância da fonte. O comprimento do stub é escolhido de forma a que a parte reativa entre as duas seja, também, cancelada. Um stub é usado para uma combinação perfeita numa única frequência.
 Para tal conectamos duas _microstrip lines_ ligadas entre a carga e a fonte, bem como outra ligada apenas à fonte e com o outro terminal desconectado , para simular o _open Stub_. Posteriormente dimensionamos ambas as _microstrip lines_ com auxilio da ferramenta de _Smith Chart_ para obter a impedância da linha e do stub que correspodem a zero reflexões e zero perdas das linhas. Normalizando os valores da impedância, obtivemos duas soluções: A primeira com o caminho mais longo de stub e a segunda com o mais curto.
 
+
+
+
 __Stub Longo__:
 
-![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45%, al } 
+![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } 
 
 ![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
 
