@@ -25,16 +25,10 @@ Para tal conectamos duas _microstrip lines_ ligadas entre a carga e a fonte, bem
 
 
 __Stub Longo__:
-
-![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } 
-
-![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
+![Análise Smtih Linha longo](Fotos/1.smith-linha.png){ width=45% } ![Análise Smtih Stub longo](Fotos/1.smith-stub.png){ width=45% }
 
 __Stub Curto__:
-
-![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% }
-
-![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
+![Análise Smtih Linha curto](Fotos/1.2.smith-linha.png){ width=45% } ![Análise Smtih Stub curto](Fotos/1.2.smith-stub.png){ width=45% }
 
 Para estas análises, com os valores que obtivemos em cima subtituímos na ferramente _LineCalc_ para obtermos os valores físicos das _Microstrip lines_. Segue abaixo as imagens correspondentes aos esquemas finais.
 
@@ -52,7 +46,7 @@ Após isto, analisamos os gráficos para identificar a solução ótima. Conclui
 Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso esquema. Em modos gerais usar dois stubs é um técnica mais comum, isto porque, usando apenas um stub se a carga mudar a posição e comprimento do stub tem de mudar também. Usando dois stubs é possível fixar a posição dos stubs em relação um ao outro e apenas mudar o comprimento dos stubs para dar _match_ a uma variação da carga.
 
 
-![Análise Smith](Fotos/1.b.smith.png){ width=45% }
+![Análise Smith](Fotos/1.b.smith.png){ width=45% } 
 
 ![Análise Smith 2](Fotos/1.b.2.smith.png){ width=45% }
 
@@ -68,14 +62,8 @@ Executamos os mesmo passos anteriormente para acomodarmos dois stubs no nosso es
 
 Efetuamos a Simulação Electromagnética do esquema de 1.a). No primeiros gráfico conseguimos observar os resultados da simulação electromagnética de todos os _S parameters_ Comparando os resultados da análise electromagnética baseado no Método dos Momentos com a análise inicial, podemos verificar uma deslocação da frequência aonde a reflexão é nula. A análise electromagnética baseada no metódo dos momentos é esperado que nos dê um simulação mais precisa que a simulação inicial, que numa primeira fase, a simulação esquemática é mais rápida.
 
-![Coeficiente de reflexção Simulado](Fotos/em3.png){ width=45% }
+![Coeficiente de reflexção Simulado](Fotos/em3.png){ width=30% } ![Layout filtro](Fotos/Em1.png){ width=30% } ![Simulção de Campo Eléctrico](Fotos/em2.png){ width=30% }
 
-![Layout filtro](Fotos/Em1.png){ width=45% }
-
-![Simulção de Campo Eléctrico](Fotos/em2.png){ width=45% }
-
-
-
-# Conlusions
+# Conclusão
 
 Em suma, numa primeira fase usar apenas um _stub_ para equilibrar a linha é uma abordagem mais rápida para obter a solução desejada. Para uma maior versatilidade com o mesmo objetivo podemos usar dois _stubs_ em aberto, deste modo não temos de alterar a distância e o comprimento do stub, apenas temos de variar o comprimento dos stubs, caso mude a impedância de carga, mantência a distância relativa entre os mesmos. Um _stub_ só vai atingir uma perfeita combinação numa só frequência, usando vários _stubs_ já conseguimos obter uma combinação perfeita numa maior gama de frequências. A simulação electromagnética baseada no Método dos Momentos é mais trabalhosa e demorada mas permite obter uma simulação mais precisa.
