@@ -1,0 +1,10 @@
+Hank Zumbahlen,
+CHAPTER 8 - Analog Filters,
+Editor(s): Hank Zumbahlen,
+Linear Circuit Design Handbook,
+Newnes,
+2008,
+Pages 581-679,
+ISBN 9780750687034,
+https://doi.org/10.1016/B978-0-7506-8703-4.00008-0.
+(https://www.sciencedirect.com/science/article/pii/B9780750687034000080)
