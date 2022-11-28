@@ -8,7 +8,7 @@ float-placement-figure: H
 lang: pt
 ...
 
-# Laboratorio ERF
+# Laboratorio ERF - RASCUNHO
 
 >Trabalho Prático n.º 5
 
@@ -24,18 +24,10 @@ lang: pt
 
 >[!question]a) Escolha um tipo de filtro (equal-ripple, maximally flat ou maximally flat time delay) justificando com uma possível aplicação prática para o filtro projectado.
 
-> IEEE Convention
->
-> - $L$ band - $[1,2[\ Ghz$
->
-> - $S$ band - $[2,4[\ Ghz$
- 
-
 A banda S contém o espectro do sinal de Wifi, por isso para ter um objectivo pratico, vamos tentar criar um filtro para wifi 2.4ghz.
+entre 2.4 ghz e 2.835ghz que engloba o standart 802.11 do IEE, para um total de largura de banda de 16,62%
 
-Como queremos uma atenuação de 20Db
-
-
+Para o tipo de codificação digital do wifi, o filtro ideal seria um filtro de Bessel-Thompson, pois este filtro tem um um time delay constante significando que todas as frequencias que compoem o sinal digital que pretendemos que passe pelo nosso filtro nao sofram de atrasos, o que nao acontece com os outros filtros. Esta vantagem tem como reverso da medelha um declive muito lento na zona de corte o que nos impediu de calcular um filtro que cumprisse o requesito de 20dB de atenuação a 15% da banda central. Deparados com esta dificuldade e depois de consultar alguns livros, decidimos projectar um filtro de ordem 3 de Tchebysheb, que cumpre todos os requesitos no entanto apresenta um ripple na banda passante.
 
 
 ```python
@@ -43,63 +35,31 @@ Como queremos uma atenuação de 20Db
 %pip install matplotlib
 %pip install networkx
 %pip install control
+
 ```
-
-    Defaulting to user installation because normal site-packages is not writeable
-    Requirement already satisfied: scikit-rf in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (0.24.1)
-    Requirement already satisfied: pandas~=1.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from scikit-rf) (1.5.1)
-    Requirement already satisfied: scipy~=1.7 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from scikit-rf) (1.9.3)
-    Requirement already satisfied: numpy~=1.21 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from scikit-rf) (1.23.3)
-    Requirement already satisfied: python-dateutil>=2.8.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from pandas~=1.1->scikit-rf) (2.8.2)
-    Requirement already satisfied: pytz>=2020.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from pandas~=1.1->scikit-rf) (2022.5)
-    Requirement already satisfied: six>=1.5 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from python-dateutil>=2.8.1->pandas~=1.1->scikit-rf) (1.16.0)
-    Note: you may need to restart the kernel to use updated packages.
-    Defaulting to user installation because normal site-packages is not writeable
-    Requirement already satisfied: matplotlib in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (3.6.2)
-    Requirement already satisfied: numpy>=1.19 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (1.23.3)
-    Requirement already satisfied: cycler>=0.10 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (0.11.0)
-    Requirement already satisfied: packaging>=20.0 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (21.3)
-    Requirement already satisfied: python-dateutil>=2.7 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (2.8.2)
-    Requirement already satisfied: pillow>=6.2.0 in /usr/lib/python3/dist-packages (from matplotlib) (9.0.1)
-    Requirement already satisfied: pyparsing>=2.2.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (3.0.9)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (1.4.4)
-    Requirement already satisfied: fonttools>=4.22.0 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (4.38.0)
-    Requirement already satisfied: contourpy>=1.0.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib) (1.0.6)
-    Requirement already satisfied: six>=1.5 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib) (1.16.0)
-    Note: you may need to restart the kernel to use updated packages.
-    Defaulting to user installation because normal site-packages is not writeable
-    Requirement already satisfied: networkx in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (2.8.8)
-    Note: you may need to restart the kernel to use updated packages.
-    Defaulting to user installation because normal site-packages is not writeable
-    Requirement already satisfied: control in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (0.9.2)
-    Requirement already satisfied: numpy in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from control) (1.23.3)
-    Requirement already satisfied: scipy in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from control) (1.9.3)
-    Requirement already satisfied: matplotlib in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from control) (3.6.2)
-    Requirement already satisfied: pyparsing>=2.2.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (3.0.9)
-    Requirement already satisfied: python-dateutil>=2.7 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (2.8.2)
-    Requirement already satisfied: contourpy>=1.0.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (1.0.6)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (1.4.4)
-    Requirement already satisfied: fonttools>=4.22.0 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (4.38.0)
-    Requirement already satisfied: pillow>=6.2.0 in /usr/lib/python3/dist-packages (from matplotlib->control) (9.0.1)
-    Requirement already satisfied: packaging>=20.0 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (21.3)
-    Requirement already satisfied: cycler>=0.10 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from matplotlib->control) (0.11.0)
-    Requirement already satisfied: six>=1.5 in /home/martinhofigueiredo/.local/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib->control) (1.16.0)
-    Note: you may need to restart the kernel to use updated packages.
-
 
 
 ```python
+import skrf as rf
+import numpy as np  # for np.allclose() to check that S-params are similar
+import control
+from scipy import signal
+import matplotlib.pyplot as plt
 from IPython.display import display, Markdown, Latex
 
 %matplotlib inline
-import matplotlib.pyplot as plt
-import control
-import numpy as np  # for np.allclose() to check that S-params are similar
-import skrf as rf
 rf.stylely()
+
 ```
 
 # Contexto Teorico
+
+> IEEE Convention
+>
+> - $L$ band - $[1,2[\ Ghz$
+>
+> - $S$ band - $[2,4[\ Ghz$
+
 
 ## [S Band](https://en.wikipedia.org/wiki/S_band)
 
@@ -148,38 +108,41 @@ A Bessel low-pass filter is characterized by its transfer function:
 
 $$H(s)=\frac{\theta _{n}(0)}{\theta _{n}(s/\omega _{0})}$$
 
-where $\theta _{n}(s)$ is a reverse Bessel polynomial from which the filter gets its name and $\omega _{0}$ is a frequency chosen to give the desired cut-off frequency. The filter has a low-frequency group delay of $1/\omega _{0}$. Since $\theta _{n}(0)$ is indeterminate by the definition of reverse Bessel polynomials, but is a removable singularity, it is defined that $\theta _{n}(0)=\lim _{{x\rightarrow 0}}\theta _{n}(x)$.
+where $\theta _{n}(s)$ is a reverse Bessel polynomial from which the filter gets its name and $\omega _{0}$ is a frequency chosen to give the desired cut-off frequency. The filter has a low-frequency group delay of $1/\omega _{0}$. Since $\theta _{n}(0)$ is indeterminate by the definition of reverse Bessel polynomials, but is a removable singularity, it is defined that $\theta _{n}(0)=\lim _{{x\rightarrow 0}}\theta _{n}(x)$. This corresponds to the numerator being the independent term in the Bessel polynomial.
 
 
 ```python
 
 import math
 
+
 def besselpoly(n: int):
-    if(n == 0): 
+    if (n == 0):
         display(Markdown(f"$Order\ must\ be\ bigger\ than\ 0,\tn > 0$"))
         return 0
     poly = []
     string = []
-    theta = ""  
-    for k in range(0,n+1): #Account for iteration k=n
-        a_k = math.factorial(2*n - k) / ( pow(2, (n-k)) * math.factorial(k) * math.factorial(n-k) )
+    theta = ""
+    for k in range(0, n+1):  # Account for iteration k=n
+        a_k = math.factorial(2*n - k) / (pow(2, (n-k)) *
+                                         math.factorial(k) * math.factorial(n-k))
         poly.append(a_k)
         string.append(f" - ${k = },a_{k} = {a_k}$")
         aux = f'{a_k:.0f}'
         if a_k == 1 and k != 0:
-         aux = ''
-        if k>0:
+            aux = ''
+        if k > 0:
             if k == 1:
-                theta = (aux +'s + '+ theta)
+                theta = (aux + 's + ' + theta)
             else:
-                theta = (aux+'s^'+'{'+f'{k:.0f}'+'} + '+ theta)  
-        else: 
-            theta = ' ' + aux + theta 
+                theta = (aux+'s^'+'{'+f'{k:.0f}'+'} + ' + theta)
+        else:
+            theta = ' ' + aux + theta
     display(Markdown(f'${n = }\ ,\ {theta} $'))
-    #for line in string: 
+    # for line in string:
     #    display(Markdown(line))
     return poly
+
 ```
 
 
@@ -189,21 +152,23 @@ def besselfilter(n):
 
     dividend = poly[0]
     poly.reverse()
-    H = control.tf(dividend, poly)
+    for k in range(len(poly)):
+        poly[k] = poly[k]/dividend
+    H = control.tf(1, poly)
     print(H)
-    mag,phase,omega = control.bode(H,Hz=True,dB=True,deg=False)
+    control.bode(H)
+besselfilter(3)
 
-besselfilter(5)
 ```
 
 
-$n = 5\ ,\ s^{5} + 15s^{4} + 105s^{3} + 420s^{2} + 945s +  945 $
+$n = 3\ ,\ s^{3} + 6s^{2} + 15s +  15 $
 
 
     
-                         945
-    ----------------------------------------------
-    s^5 + 15 s^4 + 105 s^3 + 420 s^2 + 945 s + 945
+                  1
+    -----------------------------
+    0.06667 s^3 + 0.4 s^2 + s + 1
     
 
 
@@ -216,38 +181,44 @@ $n = 5\ ,\ s^{5} + 15s^{4} + 105s^{3} + 420s^{2} + 945s +  945 $
 
 ```python
 
-z0 = 50 # Impedancia Caracteristicas
-H = 0.508e-3 #(m) Altura do material
-e_r = 3.55 # Permissividade 
-tan_D = 0.0021 # 
+z0 = 50  # Impedancia Caracteristicas
+H = 0.508e-3  # (m) Altura do material
+e_r = 3.55  # Permissividade
+tan_D = 0.0021
 
-bwpercent = 0.2 # 
+
+wifimax = 2.835
+wifimin = 2.4
+wifigeocenter = np.sqrt(wifimax*wifimin)
+wifiaricenter = 0.5*(wifimax+wifimin)
+bwpercent = np.min([(wifimax-wifimin)/wifiaricenter, 0.2]) # a largura de banda tem que ser no maximo 20%
+
 
 bwmax = ((4e9-2e9)*0.2)
 SIM_Steps = 10000
 
-f_c =  2.4e9 # Hz Frequencia centra para wifi 2.4
-
+f_c = wifigeocenter  # Hz Frequencia centra para wifi 2.4
 
 
 f_l = (1 - bwpercent/2) * f_c
 f_r = (1 + bwpercent/2) * f_c
 
-w_l= 2*np.pi*f_l
-w_r= 2*np.pi*f_r
-w_c= 2*np.pi*f_c
+w_l = 2*np.pi*f_l
+w_r = 2*np.pi*f_r
+w_c = 2*np.pi*f_c
 
 w_0 = np.sqrt(w_l*w_r)
 
-temp = 1 / (bwpercent*((f_l/f_c)+(f_c/f_l)))
+w_normalized = 1 / (bwpercent*((f_l/f_c)+(f_c/f_l)))
 
 ```
 
 
 ```python
 
-display(Markdown(f"$temp = {temp:.4}\ $"))
+display(Markdown(f"- Frequencia de atenuacao normalizada = ${w_normalized:.4}\ $"))
 display(Markdown(f"- Largura de Banda Maxima -> $bw_{{max}} = {bwmax:.2e}\ Hz $"))
+display(Markdown(f"- Largura de Banda fraccionaria -> $bw_{{\%}} = {bwpercent*100:.2f}\ \% $"))
 display(Markdown(f"- Frequencia central -> $f_c = {f_c:.2e}\ Hz $"))
 display(Markdown(f"- Frequencia angular central (media geometrica)-> $w_0 = {w_0:.2e}\ rad/s$"))
 display(Markdown(f"- Frequencia angular central (media aritmetica)-> $w_c = {w_c:.2e}\ rad/s$"))
@@ -259,7 +230,7 @@ display(Markdown(f"- Frequencia de angular corte $f_{{c2}} = {w_r:.2e}\ rad/s$")
 ```
 
 
-$temp = 2.486\ $
+- Frequencia de atenuaçao normalizada = $2.997\ $
 
 
 
@@ -267,31 +238,35 @@ $temp = 2.486\ $
 
 
 
-- Frequencia central -> $f_c = 2.40e+09\ Hz $
+- Largura de Banda fraccionária -> $bw_{\%} = 16.62\ \% $
 
 
 
-- Frequencia angular central (media geometrica)-> $w_0 = 1.50e+10\ rad/s$
+- Frequencia central -> $f_c = 2.61e+00\ Hz $
 
 
 
-- Frequencia angular central (media aritmetica)-> $w_c = 1.51e+10\ rad/s$
+- Frequencia angular central (media geometrica)-> $w_0 = 1.63e+01\ rad/s$
 
 
 
-- Frequencia de corte $f_{c1} = 2.16e+09\ Hz $
+- Frequencia angular central (media aritmetica)-> $w_c = 1.64e+01\ rad/s$
 
 
 
-- Frequencia de corte $f_{c2} = 2.64e+09\ Hz $
+- Frequencia de corte $f_{c1} = 2.39e+00\ Hz $
 
 
 
-- Frequencia de angular corte $f_{c1} = 1.36e+10\ rad/s$
+- Frequencia de corte $f_{c2} = 2.83e+00\ Hz $
 
 
 
-- Frequencia de angular corte $f_{c2} = 1.66e+10\ rad/s$
+- Frequencia de angular corte $f_{c1} = 1.50e+01\ rad/s$
+
+
+
+- Frequencia de angular corte $f_{c2} = 1.78e+01\ rad/s$
 
 
 b) Projecte e simule um protótipo do filtro usando elementos discretos
@@ -301,7 +276,7 @@ b) Projecte e simule um protótipo do filtro usando elementos discretos
 
 ```python
 # scikit-rf: the filter by cascading all lumped-elements
-freq = rf.Frequency(0.001,4,SIM_Steps,'ghz')
+freq = rf.Frequency(0.001, 4, SIM_Steps, 'ghz')
 line = rf.media.DefinedGammaZ0(frequency=freq, z0=z0)
 
 # scikit-rf: the filter with the Circuit builder
@@ -319,7 +294,7 @@ L4 = line.inductor(20.396e-9, name='L5')
 L5 = line.inductor(392.7e-12, name='L5')
 port1 = rf.Circuit.Port(frequency=freq, name='port1', z0=z0)
 port2 = rf.Circuit.Port(frequency=freq, name='port2', z0=z0)
-ground =  rf.Circuit.Ground(frequency=freq, name='ground', z0=z0)
+ground = rf.Circuit.Ground(frequency=freq, name='ground', z0=z0)
 
 connections = [
     [(port1, 0), (C1, 0), (L1, 0), (C2, 0)],
@@ -337,7 +312,7 @@ circuit.graph()
 
 
 
-    <networkx.classes.graph.Graph at 0x7f212e1fcdc0>
+    <networkx.classes.graph.Graph at 0x7f0fd54a6c80>
 
 
 
@@ -349,6 +324,7 @@ passband_circuit.name = 'Pass-band circuit'
 
 passband_circuit.plot_s_db(m=0, n=0, lw=2)
 passband_circuit.plot_s_db(m=1, n=0, lw=2)
+
 ```
 
 
