@@ -1,6 +1,8 @@
-# Laboratorio ERF - RASCUNHO
+# Laboratorio ERF 
 
 >Trabalho Prático n.º 5
+>Martinho Figueiredo up201506179
+>José Pedro Cruz up201504646
 
 ## Projecto de um filtro passa-banda
 
@@ -205,9 +207,9 @@ w_normalized = 1 / (bwpercent*((f_l/f_c)+(f_c/f_l)))
 
 
 ```python
-display(Markdown(f"- Frequencia de atenuaçao normalizada = ${w_normalized:.4}\ $"))
+display(Markdown(f"- Frequencia de atenuacao normalizada = ${w_normalized:.4}\ $"))
 display(Markdown(f"- Largura de Banda Maxima -> $bw_{{max}} = {bwmax:.2e}\ Hz $"))
-display(Markdown(f"- Largura de Banda fraccionária -> $bw_{{\%}} = {bwpercent*100:.2f}\ \% $"))
+display(Markdown(f"- Largura de Banda fraccionaria -> $bw_{{\%}} = {bwpercent*100:.2f}\ \% $"))
 display(Markdown(f"- Frequencia central -> $f_c = {f_c:.2e}\ Hz $"))
 display(Markdown(f"- Frequencia angular central (media geometrica)-> $w_0 = {w_0:.2e}\ rad/s$"))
 display(Markdown(f"- Frequencia angular central (media aritmetica)-> $w_c = {w_c:.2e}\ rad/s$"))
@@ -261,72 +263,22 @@ b) Projecte e simule um protótipo do filtro usando elementos discretos
 (condensadores e bobines).
 
 
-
-```python
-# scikit-rf: the filter by cascading all lumped-elements
-freq = rf.Frequency(0.001, 4, SIM_Steps, 'ghz')
-line = rf.media.DefinedGammaZ0(frequency=freq, z0=z0)
-
-# scikit-rf: the filter with the Circuit builder
-
-line = rf.media.DefinedGammaZ0(frequency=freq)
-C1 = line.capacitor(11.31e-12, name='C1')
-C2 = line.capacitor(217.9e-15, name='C2')
-C3 = line.capacitor(16.85e-12, name='C3')
-C4 = line.capacitor(217.9e-12, name='C4')
-C5 = line.capacitor(11.31e-12, name='C5')
-L1 = line.inductor(392.7e-12, name='L1')
-L2 = line.inductor(20.39e-9, name='L2')
-L3 = line.inductor(263.6e-12, name='L3')
-L4 = line.inductor(20.396e-9, name='L5')
-L5 = line.inductor(392.7e-12, name='L5')
-port1 = rf.Circuit.Port(frequency=freq, name='port1', z0=z0)
-port2 = rf.Circuit.Port(frequency=freq, name='port2', z0=z0)
-ground = rf.Circuit.Ground(frequency=freq, name='ground', z0=z0)
-
-connections = [
-    [(port1, 0), (C1, 0), (L1, 0), (C2, 0)],
-    [(C2, 1), (L2, 0)],
-    [(L2, 1), (C3, 0), (L3, 0), (port2, 0)],
-    [(C1, 1), (C3, 1), (L1, 1), (L3, 1), (ground, 0)],
-]
-
-circuit = rf.Circuit(connections)
-
-circuit.graph()
-
-```
-
-
-
-
-    <networkx.classes.graph.Graph at 0x7f0fd54a6c80>
-
-
-
-
-```python
-
-passband_circuit = circuit.network
-passband_circuit.name = 'Pass-band circuit'
-
-passband_circuit.plot_s_db(m=0, n=0, lw=2)
-passband_circuit.plot_s_db(m=1, n=0, lw=2)
-
-```
-
-
-    
-![png](readme_files/readme_12_0.png)
-    
-
+![](readme_files/imag1.png)
 
 c) Projecte e simule o filtro usando uma implementação em microstrip coupled lines.
 
 
+![](readme_files/imag2.png)
+
 
 d) Faça uma implementação final do filtro e sua optimização usando uma
 implementação em hairpin.
+
+
+![](readme_files/hairpin.png)
+
+
+![](readme_files/ocb.png)
 
 
 
